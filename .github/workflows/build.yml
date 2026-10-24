@@ -14,11 +14,18 @@ jobs:
       - name: Setup Theos
         uses: Randomblock1/theos-action@v1
 
+      - name: Unpack sources
+        run: |
+          rm -rf src
+          mkdir src
+          unzip -o icontint-v2.zip -d src
+
       - name: Build rootless package
+        working-directory: src
         run: make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
 
       - name: Upload deb
         uses: actions/upload-artifact@v4
         with:
-          name: IconTint-deb
-          path: packages/*.deb
+          name: IconTint-v2-deb
+          path: src/packages/*.deb
