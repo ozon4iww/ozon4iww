@@ -1,0 +1,9 @@
+Package: com.vibe.icontint
+Name: IconTint
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Tint all home screen icons with one color, like iOS 18 Tinted mode
+Maintainer: me
+Author: me
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 15.0)
